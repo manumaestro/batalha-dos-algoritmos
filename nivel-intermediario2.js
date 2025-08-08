@@ -117,7 +117,7 @@ if (experiencia >= 1000) {
     console.log("📈 Subiu para o nível " + nivel + "!");
 } else {
     console.log("📚 " + nomePersonagem + " ainda busca mais sabedoria..");
-    console.log(" Experiência atul: " + experiencia + "/10000");
+    console.log("✨ Experiência atual: " + experiencia + "/10000");
 }
 
 console.log("");
@@ -128,7 +128,7 @@ console.log("CAPÍTULO 3: A Batalha Decisiva");
 let poderInimigo = 60;
 
 if (vidaAtual <= 30) {
-    console.log(" Em estado crítico, " nomePersonagem + " libera toda sua força interior!");
+    console.log("🆘 Em estado crítico, " + nomePersonagem + " libera toda sua força interior!");
     poderInimigo -= (forca * 2);
 } else if (manaAtual >= 30 && classe === "Psiconauta Rebelde") {
     console.log("💥 " + nomePersonagem + " canaliza um surto psiquico e explode o campo mental do inimigo");
@@ -146,7 +146,7 @@ if (vidaAtual <= 30) {
 console.log("Poder restante do inimigo: " + poderInimigo + "\n");
 
 // 🏆 epílogo
-IF (poderInimigo <= 0) {
+if (poderInimigo <= 0) {
     console.log("🎉 VITÓRIA! O Guardião do caos foi derrotado por " + nomePersonagem + "!");
     experiencia += 100;
     combatesVencidos++;
@@ -157,3 +157,69 @@ IF (poderInimigo <= 0) {
 }
 
 console.log("\n🏁 FIM DO CAPÍTULO - Aguarde a próxima expansão mental!");
+
+// ======= NÍVEL 3 CASSTELO DOS ARRAYS ======= //
+
+
+// Continuação dos níveis anteriores - Personagem: Nyx Raven
+
+
+// === RESGATE E ATUALIZAÇÃO DA PERSONAGEM === //
+let = nomePersonagem = "Nyx Raven";
+let classe2 = "Psiconauta Rebelde";
+let nivelAgora = 13;
+let vidaAgora = 120;
+let atualMana = 50;
+let maximaMana = 50;
+let experienciaAtual = 970;    // XP acumulada até aqui 
+let ouroAgora = 45;       // moedas restantes
+
+
+// Novos atributos para batalhas do castelo
+let forcaAtual = 18;
+let defesaAtual = 22;
+let agilidadeAtual = 17;
+let combatesVencidosAtual = 2;
+
+
+// == ARRAYS (INVENTÁRIO, ALIADOS, INIMIGOS, SALAS) == 
+let inventario = ["Poção de Vida Suprema", "Amplificador Neural", "Jaqueta de contenção mental"];
+let aliados = ["Mago Eldrin", "Guerreira Luna", "Arqueiro Vex"];
+let inimigosEncontrados = ["Gobloon Sombrio", "Orc Berserker", "Dragão Menor"];
+let salasCastelo = ["Biblioteca Arcana", "Armadilha de Cristal", "Torre do Tempo", "Sala dos espelhos"];
+let tesouroColetado = [];
+
+
+// Relatório iniciais
+console.log("🏰 === " + nomePersonagem + " ADENTRA O CASTELO DOS ARRAYS ==");
+console.log("Inventário inicial (" + inventario.length + "): " + inventario.join(", "));
+console.log("Aliados prontos: " + aliados.join(", "));
+console.log("Inimigos à vista: " + inimigosEncontrados.join(", "));
+console.log("Salas a explorar: " + salasCastelo.lenght);
+console.log("");
+
+// --------- CAPÍTULO 1: Descoberta das coleções arcanas ----------- //
+console.log("🔐 CAPÍTULO 1: Os Baús Arcanos do Castelo");
+
+
+// Acessando e modificando
+console.log("🧪 Primeiro item do inventário: " + inventario[0]);
+inventario[0] = "Poções de Cura Suprema"; // Substitui 
+console.log("✨ Inventario atualizado: " + inventario.join(" | "));
+
+
+// Encontrando mais poções nas salas
+let pocoesEncontradas = ["Cura Maior", "Força Titânica", "Invisibilidade"];
+console.log("🧪 Poções eencontradas: " + pocoesEncontradas.length);
+
+
+// Adiciona um anel raro ao inventário
+inventario.push("Anel de Proteção");
+console.log("💍 Novo item adicionado! Inventário agora tem " + inventario.length + " itens.");
+
+
+// Remove o último item 
+let itemRemovido = inventario.pop();
+console.log("❌ Item removido do inventário (para troca): " + itemRemovido);
+console.log("💼 Inventrário Atual: " + inventario.join(", "));
+console.log("");
