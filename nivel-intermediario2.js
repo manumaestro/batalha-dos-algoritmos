@@ -257,6 +257,27 @@ console.log("");
 
 }
 
+// --------- CAPÍTULO 3: Recrutamento
+console.log("⭐ CAPÍTULO 3: Reunindo os aliados Arcanos");
+console.log("🏹" + nomePersonagem + " convoca seus aliados para a batalha final!:");
+
+for (let i = 0; i aliados.length; i++) {
+    let aliado = aliados[i];
+    console.log("🎇Aliado " + (i + 1) + ": " + aliado + " se junta à missão!");
+
+    // Condicional composta
+    if (i === 0) {
+        console.log("🔮 Líder mágico: " + aliado + " multiplica o poder espiritual! Ouro +50");
+        ouroAgora += 50;
+    } else {
+        console.log("🛡️ Apoio decampo: " + aliado + " fortalece a equipe com experiência.");
+        experienciaAtual += 40;
+    }
+
+}
+
+console.log("🎖️ Equipe completa! Ouro: " + ouroAgora + " | Experiência: " + experiencia);
+console.log("");
 
 
 
