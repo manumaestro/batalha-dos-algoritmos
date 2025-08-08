@@ -70,3 +70,25 @@ let combatesVencidos = 2;
 let localAtual = "Vazio sombrio";
 let missaoAtual = "Rastrear o Guardião d Núcleo do Caos";
 
+console.log("🧾 === CONTINUAÇÃO DA JORNADA DE " + nomePersonagem + " === \n");
+console.log("Após sobreviver aos rituais psíquicos nas fendas do " + localAtual + ", ");
+console.log(nomePersonagem + " Avança rumo ao Núcleo do Caos para cumprir sua missão: " + missaoAtual + ",");
+console.log("Armas neurais carregadas. Realidade instável. Vontade inquebrável.\n")
+
+// 🏆 CAPÍTULO 1: Condicionais simples
+console.log("🏆 CAPÍTULO 1: O Eco dos Anciões");
+
+if (nivel < 10) {
+    console.log("Um eco do passado sussura: 'Você ainda não domina sua mente por completo.'");
+    console.log(nomePersonagem + " ignora e segue em frente.");
+}
+
+if (ouro >= 100) {
+    console.log("💰 Um mercador dimensional aparece, atraído pelo tilintar das moedas.");
+}
+
+if (classe === "Psiconauta Rebelde") {
+    console.log("Os pensamentos se alinam em aspiral.. A mente de " + nomePersonagem + " brilha em padrões fractais.");
+}
+
+console.log("");
