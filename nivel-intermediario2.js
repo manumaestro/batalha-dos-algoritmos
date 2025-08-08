@@ -92,3 +92,32 @@ if (classe === "Psiconauta Rebelde") {
 }
 
 console.log("");
+
+// CAPÍTULO 2: A Encruzilhada do Destino
+console.log("🔮 CAPÍTULO 2: A Escolha Distorcida");
+
+if (ouro >= 50) {
+    console.log("🧠 " + nomePersonagem + " compra um amplificador de memória e reforça seu equipamento!");
+    forca += 5;
+    defesa += 3;
+    ouro -= 50;
+    console.log("🛡️ Força e deesa melhoraram! Ouro restante: " + ouro);
+} else {
+    console.log("Sem recursos, ela se conecta à Rede Subconsciente e aprimora sua reação instintiva.");
+    agilidade =+ 2;
+    console.log("🏃‍♂️ Agilidade +2!");
+}
+
+// Recomenda por experiência 
+if (experiencia >= 1000) {
+    console.log(" Um novo grau de consciência é desbloqueado!");
+    nivel++;
+    experiencia = 0;
+    vidaAtual = vidaMaxima;
+    console.log("📈 Subiu para o nível " + nivel + "!");
+} else {
+    console.log("📚 " + nomePersonagem + " ainda busca mais sabedoria..");
+    console.log(" Experiência atul: " + experiencia + "/10000");
+}
+
+console.log("");
