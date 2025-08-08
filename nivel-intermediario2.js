@@ -223,3 +223,8 @@ let itemRemovido = inventario.pop();
 console.log("❌ Item removido do inventário (para troca): " + itemRemovido);
 console.log("💼 Inventrário Atual: " + inventario.join(", "));
 console.log("");
+
+
+
+
+
