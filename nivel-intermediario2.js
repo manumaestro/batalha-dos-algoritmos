@@ -224,6 +224,38 @@ console.log("❌ Item removido do inventário (para troca): " + itemRemovido);
 console.log("💼 Inventrário Atual: " + inventario.join(", "));
 console.log("");
 
+// --------- CAPÍTULO 2: Explorando as Masmorras Sistemáticas
+console.log("⚔️ CAPÍTULO 2: Explorando as Masmorras Sistemáticas");
+console.log("🗺️ Começando exploração das " + salasCastelo.length + " salas místicas..");
+
+for (let i = 0; i < salasCastelo.length; i++) {
+     console.log("🚪 Sala " + (i + 1) + ": " + salasCastelo[i]);
+
+     // Condicional simples
+if (i === 0) {
+    console.log("📚 Biblioteca: " + nomePersonagem + " encontra pergaminhos antigos e ganha +50 XP.");
+    experienciaAtual +=50;
+}
+
+if (i === 1) {
+    console.log("💎 Armadilha de Cristal: fragmentos brilham e um cristal de poder é coletado.");
+    tesouroColetado.push("Cristal de poder");
+}
+
+if (i === 2) {
+    console.log("⏰ Torre do tempo: pequenas instabilidades temporais prejudicam a vitalidade.");
+    vidaAgora -= 10;
+}
+
+if (i === 3) {
+    console.log("A sala dos espelhos: visionária - Nyx vislumbra futuros possíveis e ganha +1 agilidade.");
+    agilidade += 1;
+}
+    
+console.log("Pós-exploração -> XP: " + experienciaAtual + " | Vida: " + vidaAtual + " | Agilidade: " + agilidade);
+console.log("");
+
+}
 
 
 
