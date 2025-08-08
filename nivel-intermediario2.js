@@ -121,3 +121,39 @@ if (experiencia >= 1000) {
 }
 
 console.log("");
+
+// CAPÍTULO 3: A Batalha Decisiva
+console.log("CAPÍTULO 3: A Batalha Decisiva");
+
+let poderInimigo = 60;
+
+if (vidaAtual <= 30) {
+    console.log(" Em estado crítico, " nomePersonagem + " libera toda sua força interior!");
+    poderInimigo -= (forca * 2);
+} else if (manaAtual >= 30 && classe === "Psiconauta Rebelde") {
+    console.log("💥 " + nomePersonagem + " canaliza um surto psiquico e explode o campo mental do inimigo");
+    poderInimigo -= (forca + 25);
+    manaAtual -= 30;
+} else if (agilidade >= 15) {
+    console.log("⚡ " + nomePersonagem + " se move em velocidade hipersináptica e ataca!");
+    poderInimigo -= forca;
+} else {
+    console.log("🛡️ Ela adota postura defensiva, absorvendo o impacto e preparando um contra-ataque.");
+    poderInimigo -= (forca / 2);
+    vidaAtual += 10;
+}
+
+console.log("Poder restante do inimigo: " + poderInimigo + "\n");
+
+// 🏆 epílogo
+IF (poderInimigo <= 0) {
+    console.log("🎉 VITÓRIA! O Guardião do caos foi derrotado por " + nomePersonagem + "!");
+    experiencia += 100;
+    combatesVencidos++;
+    console.log("🔥 " + nomePersonagem + " agora é reverenciada como Lenda Neural.");
+} else {
+    console.log("⚠️ A batalha foi intensa, mas " + nomePersonagem + " sobreviveu.");
+    console.log("⚙️ Ela sabe que o caos retornará.. e continuará lutando.");
+}
+
+console.log("\n🏁 FIM DO CAPÍTULO - Aguarde a próxima expansão mental!");
