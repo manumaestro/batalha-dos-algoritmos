@@ -248,11 +248,11 @@ if (i === 2) {
 }
 
 if (i === 3) {
-    console.log("A sala dos espelhos: visionária - Nyx vislumbra futuros possíveis e ganha +1 agilidade.");
+    console.log("🪞 A sala dos espelhos: visionária - Nyx vislumbra futuros possíveis e ganha +1 agilidade.");
     agilidade += 1;
 }
     
-console.log("Pós-exploração -> XP: " + experienciaAtual + " | Vida: " + vidaAtual + " | Agilidade: " + agilidade);
+console.log("Pós-exploração -> XP: " + experienciaAtual + " | Vida: " + vidaAgora + " | Agilidade: " + agilidade);
 console.log("");
 
 }
@@ -261,7 +261,7 @@ console.log("");
 console.log("⭐ CAPÍTULO 3: Reunindo os aliados Arcanos");
 console.log("🏹" + nomePersonagem + " convoca seus aliados para a batalha final!:");
 
-for (let i = 0; i aliados.length; i++) {
+for (let i = 0; i < aliados.length; i++) {
     let aliado = aliados[i];
     console.log("🎇Aliado " + (i + 1) + ": " + aliado + " se junta à missão!");
 
@@ -276,8 +276,140 @@ for (let i = 0; i aliados.length; i++) {
 
 }
 
-console.log("🎖️ Equipe completa! Ouro: " + ouroAgora + " | Experiência: " + experiencia);
+console.log("🎖️ Equipe completa! Ouro: " + ouroAgora + " | Experiência: " + experienciaAtual);
 console.log("");
+
+// —-------------------- CAPÍTULO 4: A Batalha final (Condicionais encadeadas) —----------------
+
+
+console.log("🐉 CAPÍTULO 4: A Batalha final");
+
+
+// Let inimigos = [“Guardião de Cristal”, “Senhor das Sombras”, “Dragão dos Arrays”];
+let inimigosBatalha = ["Guardião de Cristal", "Senhor das Sombras", "Dragão dos Arrays"];
+let danoCausadoPorNyx = [];
+let danoRecebido = [];
+
+
+// BATALHA
+for (let i = 0; i < inimigosBatalha.length; i++) {
+    let inimigo  = inimigosBatalha[i];
+console.log("Rodada " + (i + 1) + " - Enfrentando: " + inimigo);
+
+
+let danoFeito = 0;
+if (vidaAgora <= 30) {
+    console.log("🆘 Perigo! Vida baixa - Nyx usa tática desespeerada!");
+    danoFeito = (forca * 2) + Math.floor(Math.random() * 10);
+    vidaAgora -= 5;
+} else if (atualMana >= 30 && classe === "Psiconauta Rebelde") {
+    console.log("✨ Canalizando poder psíquico! Magia devastadora!");
+    danoFeito = forca + 25 + Math.floor(Math.random() * 10);
+    atualMana -= 30;    
+} else if (agilidade >= 18) {
+    console.log("🏃‍♀️ Ataque veloz e certeiro!");
+} else {
+    console.log("🛡️ Luta defensiva e calculada.");
+    danoFeito = Math.floor(forca / 2) + Math.floor(Math.random() * 6);
+    vidaAgora += 5;
+}
+
+
+let danoInimigo = Math.floor(Math.random() * 20) + 5;
+danoCausadoPorNyx.push (danoFeito);
+danoRecebido.push (danoInimigo);
+
+
+console.log("💥 " + nomePersonagem + " causa " + danoFeito + " de dano ao "+ inimigo + "!");
+console.log("🩸 " + inimigo + " causa " + danoFeito + " de dano ao " + inimigo + "!");
+
+
+if (i === 0) {
+    console.log("💎 Primeiro inimigo derrubado: fragmento colhido.");
+    tesouroColetado.push("Fragmento de Cristal");
+} else if (i === 1) {
+    console.log("🌑 As sombras drenam energia - Nyx perde mais vitalidade.");
+    vidaAgora -= 15;
+} else {
+    console.log("🔥  Batalha final! O dragão recua, uma escama é conquistada!");
+    tesouroColetado.push("Escama Dragônica");
+    experiencia += 100;
+    combatesVencidos += 1;
+}
+
+
+console.log("👉 Estado atual -> Vida: " + vidaAgora + " | Mana: " + atualMana + "\n");
+
+
+}
+
+
+// —-------------- ESTATÍSTICAS PÓS-BATALHA
+
+
+let danoTotal = 0;
+for (let i = 0; i < danoCausadoPorNyx.length.length; i++) {
+    danoTotal += danoCausadoPorNyx[i];
+}
+let danoRecebidoTotal = 0;
+for (let i = 0; i < danoRecebido.length; i++) {
+    danoRecebidoTotal += danoRecebido[i];
+}
+
+let danoMedio = Math.round(danoTotal / danoCausadoPorNyx.length);
+console.log("📊 Dano total recebido: " + danoRecebidoTotal);
+console.log("📉 Dano total causado por " + nomePersonagem + ": " + danoTotal + " (média: " + danoMedio + ")");
+console.log("🏆 Tesouros coletados: " + tesouroColetado.length + " -> " + tesouroColetado.join(", "));
+console.log("🎖️ Combates vencidos agora: " + combatesVencidos);
+console.log("");
+
+
+let itensRaros = [];
+let itensComuns = [];
+for (let item of inventario) {
+    if (item.includes("Suprema") || item.includes("Flamejante") || item.includes("Dragônica") || item.includes("Amplificador")) {
+        itensRaros.push(item);
+    } else {
+        itensComuns.push(item);
+    }
+}
+console.log("💎 Itens Raros: " + (itensRaros.length ? itensRaros.join(", ") : "Nenhum"));
+console.log("🔧 Itens Comuns: " + (itensComuns.length ? itensComuns.join(", ") : "Nenhum"));
+console.log("");
+
+
+console.log("👑 === EPÍLOGO: " + nomePersonagem + " - CONQUISTADORA DO CASTELO ===");
+console.log("");
+console.log(nomePersonagem + " emergiu dos coredores do Castelo dos Arrays com olhos que agora veem padrões no caos.");
+console.log("As escamas e fragmentos recolhidos cintilam como suas conquistas, cada um codificando um segredo derrotado.");
+console.log("Os aliados cantam histórias da velocidade em que ela dobrou o tempo para escapar das garras das sombras.");
+console.log("As poções trocadas, as escolhas arriscadas e os loops repeidos moldaram-na em uma estrategista implacável.");
+console.log("Os pergaminhos da biblioteca arcana ainda sussuram fórmulas que só Nyx pode decifrar nas noites sem lua.");
+console.log("O inventário agora pesa com relíquias e o anel de proteção brilha quando monstros se aproximam.");
+console.log("O castelo reconheceu-a: seus arrays ordenados espelham a ordem que trouxe ao mundo fragmentado.");
+console.log("Ao longe, novas portas computacionais se abrem, torres onde funções aguardam para serem chamadas.");
+console.log("E Nyx, com XP " + experienciaAtual + " e vida " + vidaAtual + "/" + vidaMaxima + ", sorri: há sempre um loop a ser dominado.");
+console.log("A lenda não terminou, tornou-se o farol que outros heróis seguirão ao compilar seus destinos.");
+console.log("⚡TÍTULO CONCEDIDO: ARQUI-MESA DOS ARRAYS E GUARDIÃ DAS COLEÇÕES ");
+console.log("");
+console.log("📈 Estísticas Finais:");
+console.log(" Experiência: " + experienciaAtual);
+console.log(" Nível: " + nivelAgora);
+console.log(" Vida atual: " + vidaAgora + "/" + vidaMaxima);
+console.log(" Mana atual: " + atualMana + "/" + maximaMana);
+console.log(" Ouro: " + ouroAgora);
+console.log(" Inventário: " + inventario.length + " itens");
+console.log(" Tesouros épicos: " + tesouroColetado.length);
+console.log(" Aliados: " + aliados.length);
+console.log("🎯 FIM DO NÍVEL 3 | PREPRE-SE PARA A ACADEMIA DOS CÓDIGOS!");
+
+
+
+
+
+
+
+
 
 
 
